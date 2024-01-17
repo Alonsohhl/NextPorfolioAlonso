@@ -27,8 +27,8 @@ export const metadata: Metadata = {
   keywords: ["HTML", "CSS", "Javascript", "Typescript", "React", "nextjs"],
   authors: [
     {
-      name: "Cocobasic",
-      url: "https://www.cocobasic.com/",
+      name: "Alonso",
+      url: "alonsohhl.com",
     },
   ],
 };
@@ -44,7 +44,7 @@ export default function RootLayout({
         <div className="site-wrapper">
           <Header />
           {children}
-          <Footer />
+          {/* <Footer /> */}
         </div>
       </body>
     </html>

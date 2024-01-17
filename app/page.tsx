@@ -1,14 +1,19 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 // Plugins
 import { motion } from "framer-motion";
 import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import Link from "next/link";
 
 // Images
+import postImg from "@/assets/images/home/home_alonso.jpg";
+
+
 import img01 from "@/assets/images/home/home_01.jpg";
 import img02 from "@/assets/images/home/home_02.jpg";
 import img02B from "@/assets/images/home/home_02B.jpg";
@@ -19,6 +24,11 @@ import img06 from "@/assets/images/home/home_06.jpg";
 import img07 from "@/assets/images/home/home_07.jpg";
 import img08 from "@/assets/images/home/home_08.jpg";
 import closeIcon from "@/assets/images/close.png";
+
+
+import About from "./components/aboutme"
+import AboutIntro from "./components/aboutmeIntro"
+import ContactMe from "./components/homeContactMe"
 
 // ------------
 
@@ -41,129 +51,183 @@ function Home() {
     setOpenPortfolio(0);
   };
 
+
+  useEffect(() => {
+    const container = document.getElementById('page-background');
+    const sections = document.querySelectorAll('.site-content');
+    const containerWidth = container?.clientWidth;
+
+    // const tl = gsap.timeline({ repeat: -1 });
+    // gsap.set(sections, { xPercent: -100 });
+
+    // tl.to(sections, {
+    //   xPercent: 0,
+    //   duration: 3,
+    //   stagger: {
+    //     each: 1,
+    //     from: 'start',
+    //   },
+    //   ease: 'power2.inOut',
+    // });
+
+    // container.style.width = `${containerWidth}px`;
+
+    // // Event listener for mouse wheel scrolling
+    // const handleScroll = (e) => {
+    //   if (e.deltaY > 0) {
+    //     // Scrolling down
+    //     tl.play();
+    //   } else {
+    //     // Scrolling up
+    //     tl.reverse();
+    //   }
+    // };
+
+    // // Add the event listener to the document
+    // document.addEventListener('wheel', handleScroll);
+
+    // // Cleanup the event listener when the component unmounts
+    // return () => {
+    //   document.removeEventListener('wheel', handleScroll);
+    // };
+  }, []);
+
+  useEffect(() => {
+    // Register the plugin
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Select the elements
+    let sections = gsap.utils.toArray("section");
+    // let sections = gsap.utils.toArray(".panel");
+
+    // Create the animation
+    gsap.to(sections, {
+      xPercent: -100 * (sections.length - 1),
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".horizontal-container",
+        pin: true,
+        // pinSpacing: false,
+        scrub: 1,
+        snap: 1 / (sections.length - 1),
+        end: () => "+=" + document.querySelector(".horizontal-container").offsetWidth
+      }
+    });
+
+    // Cleanup function
+    return () => {
+      if (ScrollTrigger) {
+        ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      }
+    };
+  }, []); // Empty dependency array ensures this runs once on mount
+
+
   return (
     <>
-      <main className="page-background">
+      <main className="page-background" id="page-background">
         <div id="content" className="site-content">
-          <div className="content-holder center-relative content-1170">
-            <div id="portfolio-wrapper">
-              <div className="our-grid">
-                <motion.div
-                  className="our-grid-item d-1x2 animate"
-                  initial={{ opacity: 0, transform: `translateY(50px)` }}
-                  whileInView={{ opacity: 1, transform: `translateY(0px)` }}
-                  viewport={{ once: true }}
-                >
-                  <Link className="item-link" href="/single-portfolio">
-                    <img src={img01.src} alt="" />
-                    <div className="portfolio-text-holder">
-                      <p className="portfolio-title">PHOTOGRAPHY</p>
-                    </div>
-                  </Link>
-                </motion.div>
 
-                <motion.div
-                  className="our-grid-item d-1x1 animate"
-                  initial={{ opacity: 0, transform: `translateY(50px)` }}
-                  whileInView={{ opacity: 1, transform: `translateY(0px)` }}
-                  viewport={{ once: true }}
-                >
-                  <a className="item-link" onClick={() => handleOpenPopup(1)}>
-                    <img src={img02.src} alt="" />
-                    <div className="portfolio-text-holder">
-                      <p className="portfolio-title">MOCKUP</p>
+          <div className="horizontal-container">
+            <section className="panel">
+              <div className="content-holder center-relative">
+                <div className="blog-holder">
+                  <article className="blog-item-holder">
+                    <div className="entry-holder">
+                      <h2 className="entry-title">
+                        {/* <h2 className="text-9xl relative"> */}
+                        FullStack<br />
+                        Developer
+                      </h2>
+                      <img src={postImg.src} alt="" />
+                      <ul className="entry-info">
+                        <li className="author-nickname-holder">
+                          <div className="entry-info-text">Location</div>
+                          <div className="author-nickname">Victoria, BC</div>
+                        </li>
+                        <li className="entry-date-holder">
+                          <div className="entry-info-text">email</div>
+                          <div className="entry-date published"><a className="text-black" href="mailto:alonso.hl25@gmail.com">alonso.hl25@gmail.com</a></div>
+                        </li>
+                        <li className="cat-links-holder">
+                          <div className="entry-info-text">Phone</div>
+                          <div className="cat-links"><a className="text-black" href="tel:+12508805401">250-880-5401</a></div>
+                        </li>
+                      </ul>
                     </div>
-                  </a>
-                </motion.div>
+                  </article>
 
-                <motion.div
-                  className="our-grid-item d-1x1 animate"
-                  initial={{ opacity: 0, transform: `translateY(50px)` }}
-                  whileInView={{ opacity: 1, transform: `translateY(0px)` }}
-                  viewport={{ once: true }}
-                >
-                  <a className="item-link" onClick={() => handleOpenPopup(2)}>
-                    <img src={img03.src} alt="" />
-                    <div className="portfolio-text-holder">
-                      <p className="portfolio-title">SNEAKERS</p>
-                    </div>
-                  </a>
-                </motion.div>
+                </div>
+                <div className=" flex justify-between bottom-10">
 
-                <motion.div
-                  className="our-grid-item d-2x1 animate"
-                  initial={{ opacity: 0, transform: `translateY(50px)` }}
-                  whileInView={{ opacity: 1, transform: `translateY(0px)` }}
-                  viewport={{ once: true }}
-                >
-                  <a className="item-link" onClick={() => handleOpenPopup(3)}>
-                    <img src={img04.src} alt="" />
-                    <div className="portfolio-text-holder">
-                      <p className="portfolio-title">ARCHITECTURE</p>
-                    </div>
-                  </a>
-                </motion.div>
+                  <div className="contact-me"><a href="mailto:alonso.hl25@gmail.com">Contact Me</a></div>
+                  <div className="scrool">scroll >></div>
 
-                <motion.div
-                  className="our-grid-item d-1x1 animate"
-                  initial={{ opacity: 0, transform: `translateY(50px)` }}
-                  whileInView={{ opacity: 1, transform: `translateY(0px)` }}
-                  viewport={{ once: true }}
-                >
-                  <Link className="item-link" href="/single-portfolio">
-                    <img src={img05.src} alt="" />
-                    <div className="portfolio-text-holder">
-                      <p className="portfolio-title">ART</p>
-                    </div>
-                  </Link>
-                </motion.div>
 
-                <motion.div
-                  className="our-grid-item d-1x2 animate"
-                  initial={{ opacity: 0, transform: `translateY(50px)` }}
-                  whileInView={{ opacity: 1, transform: `translateY(0px)` }}
-                  viewport={{ once: true }}
-                >
-                  <a className="item-link" onClick={() => handleOpenPopup(4)}>
-                    <img src={img06.src} alt="" />
-                    <div className="portfolio-text-holder">
-                      <p className="portfolio-title">OFFICE</p>
-                    </div>
-                  </a>
-                </motion.div>
-
-                <motion.div
-                  className="our-grid-item d-1x2 animate"
-                  initial={{ opacity: 0, transform: `translateY(50px)` }}
-                  whileInView={{ opacity: 1, transform: `translateY(0px)` }}
-                  viewport={{ once: true }}
-                >
-                  <Link className="item-link" href="/single-portfolio">
-                    <img src={img07.src} alt="" />
-                    <div className="portfolio-text-holder">
-                      <p className="portfolio-title">MODEL</p>
-                    </div>
-                  </Link>
-                </motion.div>
-
-                <motion.div
-                  className="our-grid-item d-1x1 animate"
-                  initial={{ opacity: 0, transform: `translateY(50px)` }}
-                  whileInView={{ opacity: 1, transform: `translateY(0px)` }}
-                  viewport={{ once: true }}
-                >
-                  <Link className="item-link" href="/single-portfolio">
-                    <img src={img08.src} alt="" />
-                    <div className="portfolio-text-holder">
-                      <p className="portfolio-title">MOCKUP</p>
-                    </div>
-                  </Link>
-                </motion.div>
+                </div>
               </div>
-            </div>
+            </section>
+            <section className="panel ">
+              <AboutIntro />
+            </section>
+            <section className="panel ">
+              <About />
+            </section>
+            {/* <section className="description panel bg-white">
+              <div id="portfolio-wrapper">
+                <div className="our-grid">
+                  <motion.div
+                    className="our-grid-item d-1x2 animate"
+                    initial={{ opacity: 0, transform: `translateY(50px)` }}
+                    whileInView={{ opacity: 1, transform: `translateY(0px)` }}
+                    viewport={{ once: true }}
+                  >
+                    <Link className="item-link" href="/single-portfolio">
+                      <img src={img01.src} alt="" />
+                      <div className="portfolio-text-holder">
+                        <p className="portfolio-title">PHOTOGRAPHY</p>
+                      </div>
+                    </Link>
+                  </motion.div>
+
+                  <motion.div
+                    className="our-grid-item d-1x1 animate"
+                    initial={{ opacity: 0, transform: `translateY(50px)` }}
+                    whileInView={{ opacity: 1, transform: `translateY(0px)` }}
+                    viewport={{ once: true }}
+                  >
+                    <a className="item-link" onClick={() => handleOpenPopup(1)}>
+                      <img src={img02.src} alt="" />
+                      <div className="portfolio-text-holder">
+                        <p className="portfolio-title">MOCKUP</p>
+                      </div>
+                    </a>
+                  </motion.div>
+
+                  <motion.div
+                    className="our-grid-item d-1x1 animate"
+                    initial={{ opacity: 0, transform: `translateY(50px)` }}
+                    whileInView={{ opacity: 1, transform: `translateY(0px)` }}
+                    viewport={{ once: true }}
+                  >
+                    <a className="item-link" onClick={() => handleOpenPopup(2)}>
+                      <img src={img03.src} alt="" />
+                      <div className="portfolio-text-holder">
+                        <p className="portfolio-title">SNEAKERS</p>
+                      </div>
+                    </a>
+                  </motion.div>
+
+                </div>
+              </div>
+            </section> */}
           </div>
+
         </div>
+
+
       </main>
+          <ContactMe />
       {/* Popups */}
       <Popup
         open={openPortfolio !== 0}

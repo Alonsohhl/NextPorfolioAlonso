@@ -1,17 +1,14 @@
+
 // Images
-import aboutImg from "@/assets/images/about.jpg";
+import aboutImg from "@/assets/images/home/work.jpg";
 
 // ------------
 
 function About() {
   return (
-    <main className="page-background">
-      <div id="content" className="site-content">
-        <div className="content-holder center-relative content-1170">
+        <div className="content-holder center-relative content">
           <h1 className="entry-title page-title center-text">
-            My name is Peter Williams <br />
-            and I’m designer &amp; photographer
-            <br />
+            Work
           </h1>
 
 
@@ -22,32 +19,31 @@ function About() {
               <li className="timeline-event">
                 <span className="timeline-circle"></span>
                 <div className="timeline-event-content">
-                  Flatland tingling of the spine, a billion trillion science
-                  paroxysm of global death permanence
+                Led API, React, database management; focused on JavaScript/Typescript for complex apps, optimized SQL/MongoDB.
+                    <p className="italic text-white font-light">Enrollment Resources, Canada</p>
                 </div>
-                <div className="timeline-event-date">2015</div>
+                <div className="timeline-event-date">2024</div>
               </li>
 
               <li className="timeline-event">
                 <span className="timeline-circle"></span>
                 <div className="timeline-event-content">
-                  Rings of Uranus the only home we’ve ever known. Permanence of
-                  the stars Tunguska event drake equation encyclopaedia
-                  galactica great turbulent
+                    Freelancer in web, static sites, web apps, API rest, using Python, JavaScript, PHP, WordPress.
                 </div>
-                <div className="timeline-event-date">2017</div>
+                <div className="timeline-event-date">2014</div>
+                <p className="italic text-white font-light">Freelancer, Canada</p>
               </li>
 
               <li className="timeline-event">
                 <span className="timeline-circle"></span>
                 <div className="timeline-event-content">
-                  Gathered by gravity preserve and cherish that pale blue dot
-                  quasar, the carbon in our apple pies pudding
+                  translating designs to HTML/CSS, creating custom post types, working with custom and popular plugins
                 </div>
-                <div className="timeline-event-date">2018</div>
+                <div className="timeline-event-date">2010</div>
+                <p className="italic text-white font-light">LeapXD, Canada</p>
               </li>
 
-              <li className="timeline-event">
+              {/* <li className="timeline-event">
                 <span className="timeline-circle"></span>
                 <div className="timeline-event-content">
                   Tendrils of gossamer clouds, the ash of stellar alchemy
@@ -67,11 +63,11 @@ function About() {
                   something fine.
                 </div>
                 <div className="timeline-event-date">2025</div>
-              </li>
+              </li> */}
             </ul>
           </div>
 
-          <div className="one_half last">
+          {/* <div className="one_half last">
             Bearable only through love hydrogen atoms bits of moving fluff
             culture shores of the cosmic ocean paroxysm of global death rich in
             heavy atoms with pretty stories for which there’s little good
@@ -102,10 +98,8 @@ function About() {
             <a className="social-text" href="https://www.instagram.com/">
               INSTAGRAM
             </a>
-          </div>
+          </div> */}
         </div>
-      </div>
-    </main>
   );
 }
 
