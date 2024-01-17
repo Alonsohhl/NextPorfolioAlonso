@@ -49,7 +49,7 @@ const Single = () => {
               NextJs
             </div>
             <div className="social-text tag">
-              UI/UX
+              Wordpress
             </div>
           </div>
         <br/>
