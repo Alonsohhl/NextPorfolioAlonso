@@ -83,7 +83,7 @@ const Header = () => {
                       About
                     </Link>
                   </li>
-                  <li>
+                  {/* <li>
                     <span className="menu-num">03</span>
                     <Link
                       href="/blog"
@@ -102,34 +102,30 @@ const Header = () => {
                     >
                       Contact
                     </Link>
-                  </li>
+                  </li> */}
                 </ul>
               </nav>
 
               <div className="menu-right-text">
                 <p className="menu-text-title">EMAIL</p>
-                <div className="menu-text">hello@yourwebsite.com</div>
+                <div className="menu-text">alonso.hl25@gmail.com</div>
                 <br />
                 <p className="menu-text-title">PHONE</p>
-                <div className="menu-text">+988 345 783 174</div>
+                <div className="menu-text">+1 250 880 5401</div>
                 <br />
                 <p className="menu-text-title">LOCATION</p>
                 <div className="menu-text">
-                  2546 Some Street, <br />
-                  US Based Left 5,
+                  Victoria
                   <br />
-                  United States, New York
+                  BC, Canada
                 </div>
                 <br />
                 <div className="social-holder">
-                  <a className="social-text" href="https://www.twitter.com/">
-                    TWITTER
+                  <a className="social-text" href="https://github.com/Alonsohhl/" target="_blank">
+                    Github
                   </a>
-                  <a className="social-text" href="https://www.facebook.com/">
-                    FACEBOOK
-                  </a>
-                  <a className="social-text" href="https://www.instagram.com/">
-                    INSTAGRAM
+                  <a className="social-text" href="https://www.linkedin.com/in/alonsohhl">
+                    Linkedin
                   </a>
                 </div>
               </div>
@@ -151,7 +147,7 @@ export default Header;
           <span className="menu-num">01</span>
           <a href="index.html">Home</a>
         </li>
-        <li>
+        {/* <li>
           <span className="menu-num">02</span>
           <a href="about.html">About</a>
         </li>
@@ -162,7 +158,7 @@ export default Header;
         <li>
           <span className="menu-num">04</span>
           <a href="contact.html">Contact</a>
-        </li>
+        </li> */}
       </ul>
     </nav>
 
