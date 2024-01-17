@@ -22,9 +22,9 @@ import type { Metadata } from "next";
 
 // Metadata of the website (used to inprove SEO of the website)
 export const metadata: Metadata = {
-  title: "Pekko - Minimal Black Nextjs Template",
-  description: "Template by CocoBasic",
-  keywords: ["HTML", "CSS", "Javascript", "Typescript", "React", "nextjs"],
+  title: "Alonso HHL - Full Stack Web Developer",
+  description: "Alonso Huayta fullstack developer portfolio",
+  keywords: ["fullstack","developer","porfolio","HTML", "CSS", "Javascript", "Typescript", "React", "nextjs"],
   authors: [
     {
       name: "Alonso",

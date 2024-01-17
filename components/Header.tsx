@@ -29,7 +29,7 @@ const Header = () => {
       <div className={"menu-holder-front " + (menuOpen && "open")}>
         <div className="header-logo">
           <Link href="/">
-            <img src={logo.src} alt="Pekko" />
+            <img src={logo.src} alt="Alonso Huayta" />
           </Link>
         </div>
 
