@@ -76,11 +76,13 @@ const Header = () => {
                   <li>
                     <span className="menu-num">02</span>
                     <Link
-                      href="/about"
-                      className={pathname === "/about/" ? "current" : ""}
-                      onClick={handleCloseMenu}
+                      // href="/about"
+                      href="/resume.pdf"
+                      target="_blank"
+                      // className={pathname === "/about/" ? "current" : ""}
+                      // onClick={handleCloseMenu}
                     >
-                      About
+                      Resume
                     </Link>
                   </li>
                   {/* <li>
@@ -147,7 +149,7 @@ export default Header;
           <span className="menu-num">01</span>
           <a href="index.html">Home</a>
         </li>
-        {/* <li>
+        <li>
           <span className="menu-num">02</span>
           <a href="about.html">About</a>
         </li>
@@ -158,7 +160,7 @@ export default Header;
         <li>
           <span className="menu-num">04</span>
           <a href="contact.html">Contact</a>
-        </li> */}
+        </li>
       </ul>
     </nav>
 
