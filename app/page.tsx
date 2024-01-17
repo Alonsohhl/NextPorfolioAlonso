@@ -110,7 +110,7 @@ function Home() {
         // pinSpacing: false,
         scrub: 1,
         snap: 1 / (sections.length - 1),
-        end: () => "+=" + document.querySelector(".horizontal-container").offsetWidth
+        end: () => "+=" + document.querySelector(".horizontal-container")?.offsetWidth
       }
     });
 
