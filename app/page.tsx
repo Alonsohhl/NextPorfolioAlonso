@@ -101,7 +101,8 @@ function Home() {
     // let sections = gsap.utils.toArray(".panel");
 
     // Create the animation
-    const element = document.getElementById('.horizontal-container') as HTMLElement;
+    // const element = document.getElementById('.horizontal-container') as HTMLElement;
+    const element = document.querySelector(".horizontal-container") as HTMLElement;
     gsap.to(sections, {
       xPercent: -100 * (sections.length - 1),
       ease: "none",
