@@ -101,6 +101,7 @@ function Home() {
     // let sections = gsap.utils.toArray(".panel");
 
     // Create the animation
+    const element = document.getElementById('.horizontal-container') as HTMLElement;
     gsap.to(sections, {
       xPercent: -100 * (sections.length - 1),
       ease: "none",
@@ -110,7 +111,7 @@ function Home() {
         // pinSpacing: false,
         scrub: 1,
         snap: 1 / (sections.length - 1),
-        end: () => "+=" + document.querySelector(".horizontal-container")?.offsetWidth
+        end: () => "+=" + element.offsetWidth
       }
     });
 
@@ -161,7 +162,7 @@ function Home() {
                 <div className=" flex justify-between bottom-10">
 
                   <div className="contact-me"><a href="mailto:alonso.hl25@gmail.com">Contact Me</a></div>
-                  <div className="scrool">scroll >></div>
+                  <div className="scrool">scroll {'>>'}</div>
 
 
                 </div>
