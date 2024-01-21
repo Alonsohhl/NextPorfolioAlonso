@@ -17,7 +17,7 @@ import "@/styles/our-styles.css";
 
 // Types
 import type { Metadata } from "next";
-import { GoogleTagManager } from '@next/third-parties/google'
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 // --------------
 
@@ -48,7 +48,7 @@ export default function RootLayout({
           {/* <Footer /> */}
         </div>
       </body>
-      <GoogleTagManager gtmId="G-BZGPRY83XE" />
+      <GoogleAnalytics gaId="G-BZGPRY83XE" />
     </html>
   );
 }

@@ -122,6 +122,7 @@ function Home() {
         ScrollTrigger.getAll().forEach(trigger => trigger.kill());
       }
     };
+
   }, []); // Empty dependency array ensures this runs once on mount
 
 
