@@ -1,8 +1,8 @@
 
-"use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
+
 
 // Images
 import contactImg from "@/assets/images/contact.jpg";
@@ -50,6 +50,12 @@ const Contact = () => {
   ) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
+
+  const [isClient, setIsClient] = useState(false)
+
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
 
   /**
    * Handle the http request we sent to send our message (that user wrote)
@@ -100,7 +106,7 @@ const Contact = () => {
   };
 
   return (
-    <main className="page-background">
+    <main className="page-background ">
       <div id="content" className="site-content">
         <div className="content-holder center-relative content-1170">
           <h1 className="entry-title page-title center-text">
@@ -111,7 +117,7 @@ const Contact = () => {
 
           <div className="one_half">
             <p>
-            Passionate about crafting unique web experiences? I'm your go-to developer. With proficiency in TypeScript and a keen eye for modern design, I bring ideas to life. Connect for collaborative projects, innovative solutions, or just to chat about the latest in web development. Reach out, and let's create something amazing together!
+              Passionate about crafting unique web experiences? I'm your go-to developer. With proficiency in TypeScript and a keen eye for modern design, I bring ideas to life. Connect for collaborative projects, innovative solutions, or just to chat about the latest in web development. Reach out, and let's create something amazing together!
             </p>
             <br />
             <p className="my-info">
@@ -132,7 +138,7 @@ const Contact = () => {
 
           <div className="one_half last">
             <form className="contact-form" onSubmit={handleSubmit}>
-              <p>
+              <div>
                 <input
                   id="name"
                   type="text"
@@ -142,8 +148,8 @@ const Contact = () => {
                   value={formData["name"]}
                   onChange={handleDataChange}
                 />
-              </p>
-              <p>
+              </div>
+              <div>
                 <input
                   id="contact-email"
                   type="email"
@@ -154,8 +160,8 @@ const Contact = () => {
                   value={formData["email"]}
                   onChange={handleDataChange}
                 />
-              </p>
-              <p>
+              </div>
+              <div>
                 <input
                   id="subject"
                   type="text"
@@ -164,8 +170,8 @@ const Contact = () => {
                   value={formData["subject"]}
                   onChange={handleDataChange}
                 />
-              </p>
-              <p>
+              </div>
+              <div>
                 <textarea
                   id="message"
                   name="message"
@@ -174,19 +180,10 @@ const Contact = () => {
                   value={formData["message"]}
                   onChange={handleDataChange}
                 ></textarea>
-              </p>
-              <p className="contact-submit-holder">
+              </div>
+              <div className="contact-submit-holder">
                 <input type="submit" value="SEND" />
-              </p>
-              {(serverState.submitting || serverState.status?.msg) && (
-                <p className="respond-message">
-                  {serverState.submitting
-                    ? "Sending message"
-                    : serverState.status
-                    ? serverState.status?.msg
-                    : ""}
-                </p>
-              )}
+              </div>
             </form>
           </div>
           <div className="clear"></div>

@@ -28,7 +28,9 @@ import closeIcon from "@/assets/images/close.png";
 
 import About from "./components/aboutme"
 import AboutIntro from "./components/aboutmeIntro"
-import ContactMe from "./components/homeContactMe"
+//import ContactMe from "./components/homeContactMe"
+import dynamic from 'next/dynamic'
+const ContactMe = dynamic(() => import('./components/homeContactMe'), { ssr: false })
 
 // ------------
 
@@ -230,7 +232,7 @@ function Home() {
 
 
       </main>
-          <ContactMe />
+      <ContactMe />
       {/* Popups */}
       <Popup
         open={openPortfolio !== 0}
