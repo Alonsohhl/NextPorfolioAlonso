@@ -643,7 +643,7 @@ li.timeline-event:before {
   position: absolute;
   background-color: #333;
   left: -30px;
-  top:388px;
+  top:38px;
 }
 
 li.timeline-event:last-child:before {
