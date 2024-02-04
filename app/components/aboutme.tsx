@@ -5,13 +5,13 @@ import aboutImg from "@/assets/images/home/work.jpg";
 
 function About() {
   return (
-    <div className="content-holder center-relative content">
+    <div className="content-holder center-relative content max-w-4xl">
       <h1 className="entry-title page-title center-text">
         Work
       </h1>
 
 
-      <img className="page-featured-image" src={aboutImg.src} alt="" />
+      <img className="page-featured-image mx-auto" src={aboutImg.src} alt="" />
 
       <div className="one_half">
         <ul className="timeline-holder">
