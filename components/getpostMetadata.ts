@@ -12,10 +12,11 @@ const getPostMetadata = (): PostMetadata[] => {
     const fileContents = fs.readFileSync(`jobsMarkdown/${fileName}`, "utf8");
     const matterResult = matter(fileContents);
     return {
-      title: matterResult.data.title,
-      date: matterResult.data.date,
-      subtitle: matterResult.data.subtitle,
+      companyName: matterResult.data.companyName,
+      dateFrom: matterResult.data.dateFrom,
+      dateTo: matterResult.data.dateTo,
       slug: fileName.replace(".md", ""),
+      shortDesc: matterResult.data.shortDesc
     };
   });
 

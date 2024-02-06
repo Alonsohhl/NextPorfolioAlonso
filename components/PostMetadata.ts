@@ -1,6 +1,7 @@
 export interface PostMetadata {
-  title: string;
-  date: string;
-  subtitle: string;
+  companyName: string;
+  dateTo: string;
+  dateFrom: string;
   slug: string;
+  shortDesc: string;
 }

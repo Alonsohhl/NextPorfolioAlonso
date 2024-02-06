@@ -37,33 +37,23 @@ export const generateStaticParams = async () => {
 //
 //export default PostPage;
 
-import Swiper from "./Swiper"
 import { Info } from "./Info";
-//"use client";
-
-// Swiper
-//import { Swiper, SwiperSlide } from "swiper/react";
-//import { Pagination, Autoplay } from "swiper/modules";
-
-//import "swiper/css"; import "swiper/css/pagination"; import "swiper/css/effect-fade";
-
 
 function SinglePortfolio(props: any) {
   const slug = props.params.slug;
   const post = getPostContent(slug);
   return (
-    <main className="page-background single single-portfolio">
-      <div id="content " className="site-content">
-        <div className="content-holder center-relative content-1170 pt-20">
+    <main className="page-background single single-portfolio mt-20">
+      <div id="content pt-0" className="site-content">
+        <div className="content-holder center-relative content-1170">
           <h1 className="entry-title page-title center-text">
             {post.data.role}
           </h1>
-
           <div className="float-left">
             <Info dateFrom={post.data.dateFrom} dateTo={post.data.dateTo} companyName={post.data.companyName} role={post.data.role} />
           </div>
           <div className="medium-text">
-            <Markdown>{post.content}</Markdown>
+            <Markdown className="markdown text-white list-decimal list-inside">{post.content}</Markdown>
           </div>
         </div>
 
