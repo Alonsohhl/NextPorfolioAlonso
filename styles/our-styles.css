@@ -360,3 +360,9 @@
     transform: rotate(360deg);
   }
 }
+
+
+.markdown ul{
+  list-style-position: outside;
+  margin-left: 2rem;
+}

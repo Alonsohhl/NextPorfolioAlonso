@@ -24,17 +24,17 @@ function SinglePortfolio(props: any) {
   const slug = props.params.slug;
   const post = getPostContent(slug);
   return (
-    <main className="page-background single single-portfolio mt-20">
+    <main className="page-background single single-portfolio my-40">
       <div id="content pt-0" className="site-content">
         <div className="content-holder center-relative content-1170">
           <h1 className="entry-title page-title center-text">
             {post.data.role}
           </h1>
-          <div className="float-left">
+          <div className="my-2 mx-auto md:float-left md:mr-4">
             <Info dateFrom={post.data.dateFrom} dateTo={post.data.dateTo} companyName={post.data.companyName} role={post.data.role} />
           </div>
           <div className="medium-text">
-            <Markdown className="markdown text-white list-decimal list-inside">{post.content}</Markdown>
+            <Markdown className="markdown text-white pl-5 block">{post.content}</Markdown>
           </div>
         </div>
 
