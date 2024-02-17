@@ -9,10 +9,10 @@ import Link from "next/link";
 const Single = () => {
   return (
     <div className="content-holder center-relative content">
-      <h1 className="entry-title page-title">
+      <h1 className="entry-title page-title sm:mb-2">
         Get To Know
       </h1>
-      <div className="single-content-wrapper center-relative top-70 max-w-4xl">
+      <div className="single-content-wrapper center-relative top-0 lg:top-70 max-w-4xl">
         <div className="entry-content">
           <p>
             I've had the opportunity to work in the computer software industry, where I've developed a broad skill set. This includes experience with web applications, databases, and web services, as well as proficiency in REST APIs and design software. I'm also familiar with React, JavaScript, TypeScript, and the fundamentals of software architecture.
@@ -21,7 +21,7 @@ const Single = () => {
           </p>
         </div>
         <div className="clear"></div>
-        <div className="tags-holder center-text top-60 inline-block hidden md:block">
+        <div className="tags-holder center-text top-60 hidden md:block">
           <div className="social-text tag">
             React
           </div>
