@@ -21,38 +21,38 @@ const Single = () => {
           </p>
         </div>
         <div className="clear"></div>
-        <div className="tags-holder center-text top-60">
-            <div className="social-text tag">
-              React
-            </div>
-            <div className="social-text tag">
-              Javascript
-            </div>
-            <div className="social-text tag">
-              NodeJs
-            </div>
-            <br/>
-            <div className="social-text tag">
-              SQL/NonSQL
-            </div>
-            <div className="social-text tag">
-              PHP
-            </div>
-            <div className="social-text tag">
-              Typescript
-            </div>
-            <br/>
-            <div className="social-text tag">
-              CSS/SASS
-            </div>
-            <div className="social-text tag">
-              NextJs
-            </div>
-            <div className="social-text tag">
-              Wordpress
-            </div>
+        <div className="tags-holder center-text top-60 inline-block hidden md:block">
+          <div className="social-text tag">
+            React
           </div>
-        <br/>
+          <div className="social-text tag">
+            Javascript
+          </div>
+          <div className="social-text tag">
+            NodeJs
+          </div>
+          <br />
+          <div className="social-text tag">
+            SQL/NonSQL
+          </div>
+          <div className="social-text tag">
+            PHP
+          </div>
+          <div className="social-text tag">
+            Typescript
+          </div>
+          <br />
+          <div className="social-text tag">
+            CSS/SASS
+          </div>
+          <div className="social-text tag">
+            NextJs
+          </div>
+          <div className="social-text tag">
+            Wordpress
+          </div>
+        </div>
+        <br />
       </div>
     </div>
   );

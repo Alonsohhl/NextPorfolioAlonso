@@ -26,7 +26,7 @@ const Header = () => {
   return (
     <>
       {/* Header */}
-      <div className={"menu-holder-front " + (menuOpen && "open")}>
+      <div className={"absolute menu-holder-front " + (menuOpen && "open")}>
         <div className="header-logo">
           <Link href="/">
             <img src={logo.src} alt="Alonso Huayta" />

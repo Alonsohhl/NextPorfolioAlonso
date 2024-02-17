@@ -9,10 +9,10 @@ import "@fontsource/unna/400.css";
 import "@fontsource/unna/700.css";
 
 // CSS Styles
+import "@/styles/globals.css";
 import "@/styles/clear.css";
 import "@/styles/sm-clean.css";
 import "@/styles/comman.css";
-import "@/styles/globals.css";
 import "@/styles/our-styles.css";
 
 // Types

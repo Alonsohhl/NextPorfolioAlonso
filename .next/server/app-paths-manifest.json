@@ -1,11 +1,3 @@
 {
-  "/_not-found": "app/_not-found.js",
-  "/about/page": "app/about/page.js",
-  "/blog/single/page": "app/blog/single/page.js",
-  "/blog/page": "app/blog/page.js",
-  "/contact/page": "app/contact/page.js",
-  "/page": "app/page.js",
-  "/icon.png/route": "app/icon.png/route.js",
-  "/single-portfolio/page": "app/single-portfolio/page.js",
-  "/jobs/[slug]/page": "app/jobs/[slug]/page.js"
+  "/page": "app/page.js"
 }

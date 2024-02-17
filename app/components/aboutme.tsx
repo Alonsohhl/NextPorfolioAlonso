@@ -13,7 +13,11 @@ function About() {
       </h1>
 
 
-      <img className="page-featured-image mx-auto" src={aboutImg.src} alt="" />
+      <div className="hidden md:block">
+        <img className="page-featured-image mx-auto" src={aboutImg.src} alt="" />
+      </div>
+
+
 
       <div className="one_half">
         <ul className="timeline-holder">
