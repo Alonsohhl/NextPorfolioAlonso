@@ -204,7 +204,7 @@ const ChatBot = () => {
 
             {messages.length && messages.length < 2 &&
               <div className='my-2 p-2 text-sm bg-yellow-200 rounded-lg text-black '>
-                <p className='text-sm h-14'>Feel free to ask questions such as "Who are you?" and "What is your skill set?" This chatbot was created purely for entertainment by Alonso.</p>
+                <p className='text-sm h-14'>Feel free to ask questions such as &quot;Who are you&quot; and &quot;What is your skill set?&quot; This chatbot was created purely for entertainment by Alonso.</p>
               </div>
             }
             <div className="input-group max-w-full w-[800px] relative flex">

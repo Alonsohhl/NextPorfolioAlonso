@@ -15,7 +15,7 @@ const Single = () => {
       <div className="single-content-wrapper center-relative top-0 lg:top-70 max-w-4xl">
         <div className="entry-content">
           <p>
-            I've had the opportunity to work in the computer software industry, where I've developed a broad skill set. This includes experience with web applications, databases, and web services, as well as proficiency in REST APIs and design software. I'm also familiar with React, JavaScript, TypeScript, and the fundamentals of software architecture.
+            I&apos;ve had the opportunity to work in the computer software industry, where I&apos;ve developed a broad skill set. This includes experience with web applications, databases, and web services, as well as proficiency in REST APIs and design software. I&apos;m also familiar with React, JavaScript, TypeScript, and the fundamentals of software architecture.
 
             My focus has always been on contributing to projects that enhance efficiency and effectiveness. I enjoy being part of a team that innovates and finds solutions to help organizations achieve their goals.
           </p>

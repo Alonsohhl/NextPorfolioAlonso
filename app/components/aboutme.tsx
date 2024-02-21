@@ -22,9 +22,9 @@ function About() {
       <div className="one_half">
         <ul className="timeline-holder">
           {
-            posts && posts.slice(0, 2).map(post => {
+            posts && posts.slice(0, 2).map((post, index) => {
               return (
-                <li className="timeline-event" id={post.slug}>
+                <li className="timeline-event" id={post.slug} key={index}>
                   <Link href={"/jobs/" + post.slug}>
                     <span className="timeline-circle"></span>
                     <div className="timeline-event-content">
@@ -49,9 +49,9 @@ function About() {
       <div className="one_half last">
         <ul className="timeline-holder">
           {
-            posts && posts.length > 3 && posts.slice(2, 4).map(post => {
+            posts && posts.length > 3 && posts.slice(2, 4).map((post, key) => {
               return (
-                <li className="timeline-event" id={post.slug}>
+                <li className="timeline-event" id={post.slug} key={key}>
                   <Link href={"/jobs/" + post.slug}>
                     <span className="timeline-circle"></span>
                     <div className="timeline-event-content">

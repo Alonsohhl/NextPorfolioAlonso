@@ -117,7 +117,7 @@ const Contact = () => {
 
           <div className="one_half">
             <p>
-              Passionate about crafting unique web experiences? I'm your go-to developer. With proficiency in TypeScript and a keen eye for modern design, I bring ideas to life. Connect for collaborative projects, innovative solutions, or just to chat about the latest in web development. Reach out, and let's create something amazing together!
+              Passionate about crafting unique web experiences? I&apos;m your go-to developer. With proficiency in TypeScript and a keen eye for modern design, I bring ideas to life. Connect for collaborative projects, innovative solutions, or just to chat about the latest in web development. Reach out, and let&apos;s create something amazing together!
             </p>
             <br />
             <p className="my-info">

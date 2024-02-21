@@ -14,7 +14,9 @@ const roleToColorMap: Record<Message["role"], string> = {
   system: "lightred",
   user: "white",
   function: "lightblue",
-  assistant: "lightgreen"
+  assistant: "lightgreen",
+  data: "",
+  tool: ""
 };
 
 const DotAnimation = () => {
