@@ -19,13 +19,14 @@ import "@/styles/our-styles.css";
 import type { Metadata } from "next";
 import { GoogleTagManager } from '@next/third-parties/google'
 
+import ChatBot from "@/components/ChatBot"
 // --------------
 
 // Metadata of the website (used to inprove SEO of the website)
 export const metadata: Metadata = {
   title: "Alonso HHL - Full Stack Web Developer",
   description: "Alonso Huayta fullstack developer portfolio",
-  keywords: ["fullstack","developer","porfolio","HTML", "CSS", "Javascript", "Typescript", "React", "nextjs"],
+  keywords: ["fullstack", "developer", "porfolio", "HTML", "CSS", "Javascript", "Typescript", "React", "nextjs"],
   authors: [
     {
       name: "Alonso",
@@ -45,10 +46,11 @@ export default function RootLayout({
         <div className="site-wrapper">
           <Header />
           {children}
+          <ChatBot />
           {/* <Footer /> */}
         </div>
       </body>
-      <GoogleTagManager gtmId="GTM-T2BR53XQ"/>
+      <GoogleTagManager gtmId="GTM-T2BR53XQ" />
     </html>
   );
 }

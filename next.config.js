@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export",
+  // output: "export",
   // basePath: "/pekko-nextjs",
   // assetPrefix: "/pekko-nextjs/",
   trailingSlash: true,

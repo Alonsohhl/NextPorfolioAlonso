@@ -1,11 +1,14 @@
+
 import "reactjs-popup/dist/index.css";
 // Images
-import postImg from "@/assets/images/home/home_alonso.jpg";
+import postImg from "@/assets/images/home/home_alonso.jpg"
 import About from "./components/aboutme"
 import AboutIntro from "./components/aboutmeIntro"
 import HomeWrapper from "@/components/Home"
 //import ContactMe from "./components/homeContactMe"
 import dynamic from 'next/dynamic'
+
+
 const ContactMe = dynamic(() => import('./components/homeContactMe'), { ssr: false })
 
 function Home() {
