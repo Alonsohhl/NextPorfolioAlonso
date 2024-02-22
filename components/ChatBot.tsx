@@ -40,11 +40,14 @@ const ChatBot = () => {
   ]);
 
   const [loading, setLoading] = useState(true);
-  const [message, setMessage] = useState<string>(prompt);
+  const [message, setMessage] = useState<string>("");
+  //const [message, setMessage] = useState<string>(prompt);
   const [file, setFile] = useState<File | undefined>(undefined);
   const [status, setStatus] = useState<AssistantStatus>("awaiting_message");
   const [threadId, setThreadId] = useState<string>("");
   const [error, setError] = useState<unknown | undefined>(undefined);
+
+  const [inputValue, setInputValue] = useState('');
 
 
   const [visible, setVisible] = useState(true);
@@ -54,6 +57,8 @@ const ChatBot = () => {
   const [isTyping, setIsTyping] = useState<boolean>(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+
+    setLoading(true)
     e.preventDefault();
     setStatus("in_progress");
     setMessages((messages: Message[]) => [
@@ -66,6 +71,7 @@ const ChatBot = () => {
     formData.append("threadId", threadId);
     formData.append("file", file as File);
 
+    setIsTyping(true);
     const result = await fetch("/api/gpt", {
       method: "POST",
       body: formData
@@ -77,7 +83,6 @@ const ChatBot = () => {
 
     try {
 
-      setIsTyping(true);
       for await (const { type, value } of readDataStream(
         result.body.getReader()
       )) {
@@ -112,8 +117,10 @@ const ChatBot = () => {
       setError(error);
     }
 
+    setLoading(false)
     setIsTyping(false);
     setStatus("awaiting_message");
+    setMessage("");
 
   }
   const handleMessageChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -211,9 +218,9 @@ const ChatBot = () => {
 
               {isTyping && <small className='absolute -top-12 left-0.5 animate-pulse'>Alonso Bot is Typing...</small>}
 
-              <input type="text" placeholder="Type a question for ChatGPT, ask anything!"
-                className="input input-bordered flex-grow text-black px-1" required
-                onChange={handleMessageChange} disabled={loading}
+              <input type="text" placeholder="Type a question for Alonso"
+                className="input input-bordered flex-grow text-black px-1 rounded" required
+                onChange={handleMessageChange} disabled={loading} value={message}
               />
               <button className="bg-blue-950 p-3 ml-1 rounded" type="submit">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="currentColor" viewBox="0 0 16 16">
