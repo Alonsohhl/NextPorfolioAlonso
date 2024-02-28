@@ -20,10 +20,10 @@ const getBaseUrl = () => {
 export const StickyScroll = ({ content, imageUrls }:
   {
     content: {
-      title: string;
-      description: string;
+      title: string
+      description: string
     }[],
-    imageUrls: string;
+    imageUrls: string
   },
 ) => {
   const [activeCard, setActiveCard] = React.useState(0);

@@ -14,13 +14,18 @@ const getPostContent = (slug: string) => {
 };
 
 export const generateStaticParams = async () => {
+
+
   const posts = getPortfolioMetadata();
   return posts.map((post) => ({
     slug: post.slug,
   }));
 };
 
-function extractSectionContent(slug: any) {
+function extractSectionContent(slug: any): {
+  title: string
+  description: string
+}[] {
   // Read the Markdown file
   const folder = "portfolioFiles/";
   const file = `${folder}${slug}.md`;
@@ -34,26 +39,27 @@ function extractSectionContent(slug: any) {
   const lines = content.split('\n');
 
   let sections = [];
-  let currentSection = { title: '', description: [] };
+  let currentSection = { title: '', description: '' };
+  let descriptionAgregator: string[] = []
 
   lines.forEach(line => {
     if (line.startsWith('## ')) { // New section starts
       if (currentSection.title) {
         // Save the previous section before starting a new one
-        currentSection.description = currentSection.description.join('\n').trim();
+        currentSection.description = descriptionAgregator.join('\n').trim();
         sections.push(currentSection);
       }
       // Start a new section
-      currentSection = { title: line.substring(3).trim(), description: [] };
+      currentSection = { title: line.substring(3).trim(), description: '' };
     } else {
       // Add line to current section content
-      currentSection.description.push(line);
+      descriptionAgregator.push(line);
     }
   });
 
   // Don't forget to add the last section
   if (currentSection.title) {
-    currentSection.description = currentSection.description.join('\n').trim();
+    currentSection.description = descriptionAgregator.join('\n').trim();
     sections.push(currentSection);
   }
 
