@@ -5,7 +5,7 @@ import { readDataStream } from "@/lib/read-data-stream";
 import { AssistantStatus, Message } from "ai/react";
 import { ChangeEvent, FormEvent, useRef, useEffect } from "react";
 import { cn } from "@/lib/utils"
-
+import { TextGenerateEffect } from '@/components/ui/text-generate-effect';
 
 
 import ReactMarkdown from "react-markdown";
@@ -25,7 +25,7 @@ const ChatBot = () => {
   //    }
   //  ]);
 
-  const prompt = "Be a website content assistant, replying only questions about me Alonso/Alonso Huayta/alonso using the information on the files. generating responses no more than 80 words, this was built by Alonso Huayta";
+  const prompt = "Be a website content assistant, replying only questions about me Alonso/Alonso Huayta/alonso using the information on the files. generating responses no more than 20 words, this was built by Alonso Huayta";
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '0',
@@ -67,7 +67,7 @@ const ChatBot = () => {
     ]);
 
     const formData = new FormData();
-    formData.append("message", message as string);
+    formData.append("message", message + ' generate less than 30 words' as string);
     formData.append("threadId", threadId);
     formData.append("file", file as File);
 
@@ -156,21 +156,21 @@ const ChatBot = () => {
 
   return (
     <>
-      <a onClick={switchVisible} className={cn('m-2 p-2 fixed bg-white bottom-2 right-2 text-black font-bold  text-lg cursor-pointer',
+      <a onClick={switchVisible} className={cn('m-2 p-2 fixed bg-white bottom-2 right-2 text-black font-bold  text-lg cursor-pointer z-10',
         { 'hidden': visible }
       )}>
-        <div>
-          <p className='m-0 p-4'>Show Chat</p>
+        <div className='rounded-md'>
+          <p className='m-0 p-1 '>Show Chat</p>
         </div>
       </a>
 
 
       <div className={
-        cn('m-2 p-2 fixed  max-w-[350px] max-h-[600px] overflow-y-scroll bottom-2 right-0 bg-black border-solid border-2 border-white rounded-md',
+        cn('z-30 m-2 p-2 fixed max-w-[300px] max-h-[600px] overflow-y-scroll bottom-2 right-0 bg-black border-solid border-2 border-white rounded-md scrollbar scrollbar-thumb-gray-900 scrollbar-track-gray-100',
           { 'hidden': !visible }
 
         )} >
-        <a className='rounded-full absolute bg-white px-3 py-1 text-black font-bold text-lg right-2' onClick={switchVisible}>
+        <a className='z-90 rounded-full absolute bg-white px-3 py-1 text-black font-bold text-lg right-0 top-0' onClick={switchVisible}>
           x
         </a>
 
@@ -191,16 +191,10 @@ const ChatBot = () => {
                     <img src={msg.role === 'assistant' ? '/alonso-gpt.jpeg' : '/recruiter.jpeg'} alt={`${msg.role} avatar`} />
                   </div>
                 </div>
-                {/*
-              <div className="bg-gray-800 border-solid rounded-md p-2 text-sm w-full">{msg.content}</div>
-
-
-              <div className={`${msg.role === 'assistant' ? 'bg-blue-950' : 'bg-gray-800'}
-                border-solid rounded-md p-2 text-sm w-full break-all`}>{msg.content}</div>
-              */}
                 <div className={cn(`${msg.role === 'assistant' ? 'bg-blue-950' : 'bg-gray-800'}
                 border-solid rounded-md p-2 text-sm w-full break-words`)}>
-                  {msg.content}
+                  {i != messages.length - 1 && msg.content}
+                  {i == messages.length - 1 && <TextGenerateEffect words={msg.content} className='text-white text-sm' />}
                 </div>
 
               </div>
@@ -211,7 +205,7 @@ const ChatBot = () => {
 
             {messages.length && messages.length < 2 &&
               <div className='my-2 p-2 text-sm bg-yellow-200 rounded-lg text-black '>
-                <p className='text-sm h-14'>Feel free to ask questions such as &quot;Who are you&quot; and &quot;What is your skill set?&quot; This chatbot was created purely for entertainment by Alonso.</p>
+                <p className='text-sm m-0'>Feel free to ask questions such as &quot;Who are you&quot; and &quot;What is your skill set?&quot; This chatbot was created purely for entertainment by Alonso.</p>
               </div>
             }
             <div className="input-group max-w-full w-[800px] relative flex">

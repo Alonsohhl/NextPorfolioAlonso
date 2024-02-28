@@ -1,4 +1,3 @@
-
 import "reactjs-popup/dist/index.css";
 // Images
 import postImg from "@/assets/images/home/home_alonso.jpg"
@@ -7,6 +6,7 @@ import AboutIntro from "./components/aboutmeIntro"
 import HomeWrapper from "@/components/Home"
 //import ContactMe from "./components/homeContactMe"
 import dynamic from 'next/dynamic'
+import { Portfolio } from "./components/portfolio";
 
 
 const ContactMe = dynamic(() => import('./components/homeContactMe'), { ssr: false })
@@ -69,6 +69,7 @@ function Home() {
 
 
         </main>
+        <Portfolio />
         <ContactMe />
         {/* Popups */}
       </HomeWrapper>

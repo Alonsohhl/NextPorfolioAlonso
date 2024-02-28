@@ -478,3 +478,17 @@
     -webkit-mask-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='3' height='3' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 3h3V0c0 1-2 3-3 3'/%3E%3C/svg%3E");
     mask-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='3' height='3' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 3h3V0c0 1-2 3-3 3'/%3E%3C/svg%3E")
 }
+
+
+
+.four-color-gradient {
+  background: linear-gradient(
+    90deg, 
+    #f80389 0%, 
+    #994eec 33%, 
+    #3898e4 66%, 
+    #3b40f2 100%
+  );
+}
+
+
