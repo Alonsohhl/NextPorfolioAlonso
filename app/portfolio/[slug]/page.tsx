@@ -47,6 +47,7 @@ function extractSectionContent(slug: any): {
       if (currentSection.title) {
         // Save the previous section before starting a new one
         currentSection.description = descriptionAgregator.join('\n').trim();
+        descriptionAgregator = []
         sections.push(currentSection);
       }
       // Start a new section

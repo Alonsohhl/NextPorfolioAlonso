@@ -3,7 +3,7 @@ role: "AI-Powered Chatbot"
 shortDesc: "This project involved developing a custom chatbot solution for school websites, aiming to improve wleverages the power of the ChatGPT API and fine-tuning for the education domain, along with custom data integration, to deliver a dynamic and personalized experience for website visitors."
 imgUrls: "portfolio/chatbot/img1.png,portfolio/chatbot/img2.jpg"
 ---
-
+## Summary
 This project involved developing a custom chatbot solution for school websites, aiming to improve wleverages the power of the ChatGPT API and fine-tuning for the education domain, along with custom data integration, to deliver a dynamic and personalized experience for website visitors.
 
 ## Key Technologies:

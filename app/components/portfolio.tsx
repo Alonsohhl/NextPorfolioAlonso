@@ -11,7 +11,7 @@ export function Portfolio() {
 
     <main className="page-background ">
       <div id="content" className="site-content">
-        <div className="content-holder center-relative content-1170">
+        <div className="content-holder center-relative content-1170 py-30">
           <h1 className="entry-title page-title center-text">
             Recent Work
           </h1>
@@ -36,8 +36,8 @@ const PortfolioItem = ({ key, role, imgUrls, slug, shortDesc }: PortfolioMetaDat
 
 
 
-    <div className="p-3 picture-item" id={String(key)}>
-      <div className="relative block overflow-hidden rounded group transition-all duration-500">
+    <div className="p-3 picture-item " id={String(key)}>
+      <div className="relative block overflow-hidden rounded group transition-all duration-500 h-80">
         <img src={imageSrc} className="rounded transition-all duration-500 group-hover:scale-105" alt="work-image" />
 
 
