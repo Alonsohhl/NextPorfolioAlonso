@@ -156,7 +156,7 @@ const ChatBot = () => {
 
   return (
     <>
-      <a onClick={switchVisible} className={cn('m-2 p-2 fixed bg-white bottom-2 right-2 text-black font-bold  text-lg cursor-pointer z-10',
+      <a onClick={switchVisible} className={cn('m-2 p-2 fixed bg-white bottom-2 right-2 text-black font-bold  text-lg cursor-pointer z-10 hover:bg-gray-800',
         { 'hidden': visible }
       )}>
         <div className='rounded-md'>
@@ -170,19 +170,13 @@ const ChatBot = () => {
           { 'hidden': !visible }
 
         )} >
-        <a className='z-90 rounded-full absolute bg-white px-3 py-1 text-black font-bold text-lg right-0 top-0' onClick={switchVisible}>
+        <a className='z-90 rounded-full absolute bg-white px-3 py-1 text-black font-bold text-lg right-0 top-0 hover:bg-gray-800 hover:text-white' onClick={switchVisible}>
           x
         </a>
 
 
 
         <div className="mockup-window border bg-base-300 w-full h-full flex flex-col">
-          {
-            /*
-             *        <div className='p-5 pb-8 flex-grow overflow-auto'>
-             */
-
-          }
           <div className='p-5 pb-8 flex-grow overflow-auto'>
             {messages.length && messages.map((msg, i) => (
               <div className={`chat ${msg.role === 'assistant' ? 'chat-start' : 'chat-end'}`} key={'chatKey' + i}>

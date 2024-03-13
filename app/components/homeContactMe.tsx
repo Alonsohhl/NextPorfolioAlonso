@@ -127,10 +127,10 @@ const Contact = () => {
             <br />
 
             <div className="social-holder">
-              <a className="social-text" href="https://www.linkedin.com/in/alonsohhl">
+              <a className="social-text" href="https://www.linkedin.com/in/alonsohhl" target="_blank">
                 LINKEDIN
               </a>
-              <a className="social-text" href="https://github.com/Alonsohhl/">
+              <a className="social-text" href="https://github.com/Alonsohhl/" target="_blank">
                 GITHUB
               </a>
             </div>
