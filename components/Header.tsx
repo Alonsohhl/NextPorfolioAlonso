@@ -79,32 +79,10 @@ const Header = () => {
                       // href="/about"
                       href="/resume.pdf"
                       target="_blank"
-                      // className={pathname === "/about/" ? "current" : ""}
-                      // onClick={handleCloseMenu}
                     >
                       Resume
                     </Link>
                   </li>
-                  {/* <li>
-                    <span className="menu-num">03</span>
-                    <Link
-                      href="/blog"
-                      className={pathname === "/blog/" ? "current" : ""}
-                      onClick={handleCloseMenu}
-                    >
-                      Blog
-                    </Link>
-                  </li>
-                  <li>
-                    <span className="menu-num">04</span>
-                    <Link
-                      href="/contact"
-                      className={pathname === "/contact/" ? "current" : ""}
-                      onClick={handleCloseMenu}
-                    >
-                      Contact
-                    </Link>
-                  </li> */}
                 </ul>
               </nav>
 
@@ -126,7 +104,7 @@ const Header = () => {
                   <a className="social-text" href="https://github.com/Alonsohhl/" target="_blank">
                     Github
                   </a>
-                  <a className="social-text" href="https://www.linkedin.com/in/alonsohhl">
+                  <a className="social-text" href="https://www.linkedin.com/in/alonsohhl" target="_blank">
                     Linkedin
                   </a>
                 </div>
