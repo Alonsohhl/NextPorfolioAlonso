@@ -7,12 +7,12 @@ export default function HomeSection() {
         <div className="blog-holder">
           <article className="blog-item-holder">
             <div className="entry-holder">
-              <h2 className="entry-title">
+              <h2 className="entry-title -z-20">
                 FullStack
                 <br />
                 Developer
               </h2>
-              <img src={postImg.src} alt="" />
+              <img src={postImg.src} alt="" className=""/>
               <ul className="entry-info">
                 <li className="author-nickname-holder">
                   <div className="entry-info-text">Location</div>
@@ -46,8 +46,14 @@ export default function HomeSection() {
             <a href="mailto:alonso.hl25@gmail.com">Contact Me</a>
           </div>
           {/* <div className="scrool z-90">scroll {">>"}</div> */}
-          <div className="z-50 bg-black p-2 md:bg-none md:p-1">
-            scroll {">>"}
+          <div className="z-50 bg-black p-2 md:bg-none md:p-1 flex items-center gap-2">
+            <div className="leading-none ">
+              scroll<br />
+              down
+            </div>
+            <div className="leading-none text-center">
+            {">>"}
+            </div>
           </div>
         </div>
       </div>
