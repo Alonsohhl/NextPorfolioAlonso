@@ -4,6 +4,7 @@ const colors = require("tailwindcss/colors");
 const {
   default: flattenColorPalette,
 } = require("tailwindcss/lib/util/flattenColorPalette");
+const { transform } = require("typescript");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -31,6 +32,16 @@ module.exports = {
       borderWidth: {
         '6': '6px', // for a thick border
       },
+
+      keyframes: {
+        float: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-20px)' },
+        }
+      },
+      animation: {
+        float: 'float 3s ease-in-out infinite'
+      }
 
     },
   },

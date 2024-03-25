@@ -206,7 +206,7 @@ const ChatBot = () => {
 
               {isTyping && <small className='absolute -top-12 left-0.5 animate-pulse'>Alonso Bot is Typing...</small>}
 
-              <input type="text" placeholder="Type a question for Alonso"
+              <input type="text" placeholder="Ask Me Anything"
                 className="input input-bordered flex-grow text-black px-1 rounded" required
                 onChange={handleMessageChange} disabled={loading} value={message}
               />

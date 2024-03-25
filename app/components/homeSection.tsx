@@ -12,7 +12,7 @@ export default function HomeSection() {
                 <br />
                 Developer
               </h2>
-              <img src={postImg.src} alt="" className=""/>
+              <img src={postImg.src} alt="" className="animate-float"/>
               <ul className="entry-info">
                 <li className="author-nickname-holder">
                   <div className="entry-info-text">Location</div>
