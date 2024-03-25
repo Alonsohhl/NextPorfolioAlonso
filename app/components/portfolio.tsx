@@ -10,7 +10,7 @@ export function Portfolio() {
     <main className="page-background ">
       <div id="content" className="site-content">
         <div className="content-holder center-relative content-1170 py-30 min-h-screen">
-          <h1 className="entry-title page-title center-text">Recent Work</h1>
+          <h1 className="entry-title page-title center-text">Recent Projects</h1>
           <div id="grid" className="grid md:grid-cols-2 gap-4">
             {PortfolioData &&
               PortfolioData.map((item, index) => (
