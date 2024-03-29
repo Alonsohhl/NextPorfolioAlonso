@@ -195,7 +195,7 @@ const ChatBot = () => {
             ))}
           </div>
 
-          <form className="form-control m-5 items-center" onSubmit={handleSubmit}>
+          <form className="form-control m-5 items-center" onSubmit={handleSubmit} id='Alonso-Chatbot-Form'>
 
             {messages.length && messages.length < 2 &&
               <div className='my-2 p-2 text-sm bg-yellow-200 rounded-lg text-black '>

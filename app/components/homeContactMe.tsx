@@ -137,7 +137,7 @@ const Contact = () => {
           </div>
 
           <div className="one_half last">
-            <form className="contact-form" onSubmit={handleSubmit}>
+            <form className="contact-form" onSubmit={handleSubmit} id='Alonso-Contact-Form'>
               <div>
                 <input
                   id="name"
