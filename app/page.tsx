@@ -7,12 +7,16 @@ import dynamic from "next/dynamic";
 import { Portfolio } from "./components/portfolio";
 import { WavyBackground } from "@/components/ui/wavy-background";
 import { cn } from "@/lib/utils";
+import HomeStars from "./components/HomeSection/HomeStars";
 
 const ContactMe = dynamic(() => import("./components/homeContactMe"), {
   ssr: false,
 });
 
 function Home() {
+
+
+
   return (
     <>
       <WavyBackground
@@ -20,6 +24,7 @@ function Home() {
       ></WavyBackground>
       <HomeWrapper>
         <main className="page-background" id="page-background">
+          <HomeStars />
           <div id="content" className="site-content">
             <div className="horizontal-container">
               {/* <WavyBackground className="w-full mx-auto h-full pb-40 absolute -z-20"></WavyBackground> */}

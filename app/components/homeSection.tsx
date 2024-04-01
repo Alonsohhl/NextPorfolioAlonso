@@ -1,10 +1,28 @@
 // import postImg from "@/assets/images/home/home-page.png";
-import React from "react"
+"use client"
+import React, { useState, useEffect } from "react"
 import Model3d from "./3DPCModel"
 
 export default function HomeSection() {
+    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const updateMousePosition = (event: any) => {
+      setMousePosition({ x: event.clientX, y: event.clientY });
+    };
+
+    window.addEventListener('mousemove', updateMousePosition);
+
+    return () => {
+      window.removeEventListener('mousemove', updateMousePosition);
+    };
+  }, []);
+
+
+  
   return (
     <section className="panel">
+      
       <div className="content-holder center-relative">
         <div className="blog-holder">
           <article className="blog-item-holder">
@@ -15,7 +33,7 @@ export default function HomeSection() {
                 Developer
               </h2>
               {/* <img src={postImg.src} alt="" className="animate-float"/> */}
-              <Model3d />
+              <Model3d mousePosition={mousePosition}/>
               <ul className="entry-info">
                 <li className="author-nickname-holder">
                   <div className="entry-info-text">Location</div>
