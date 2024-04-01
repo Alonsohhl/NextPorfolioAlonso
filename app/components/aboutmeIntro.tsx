@@ -1,6 +1,6 @@
 // Images
-import postImg from "@/assets/images/blog/posts/post_01.jpg";
-import Link from "next/link";
+//
+import React from "react"
 // --------------
 
 const Single = () => {
@@ -10,13 +10,7 @@ const Single = () => {
       <div className="single-content-wrapper center-relative top-0 lg:top-70 max-w-4xl">
         <div className="entry-content">
           <p>
-            I&apos;ve spent 10 years in the computer software industry,
-            developing a broad skill set that allows me to contribute to
-            projects enhancing efficiency and effectiveness. My experience spans
-            web applications, databases, web services, and I&apos;m proficient
-            in REST APIs and design software. Additionally, I&apos;m well-versed
-            in React, JavaScript, TypeScript, and possess a strong understanding
-            of software architecture.
+            I'm a FullStack Developer with over 7 years of experience, adept in streamlining web application functionality and enhancing user interface design across diverse platforms. I Demonstrate proficiency in database design, and cloud infrastructure, coupled with a robust skill set in NextJS, Vue, React, and Git, ensuring high performance and scalability of web solutions. Committed to leveraging analytical skills to solve complex problems, improve system reliability, and contribute to team success through effective collaboration and innovative approaches.
           </p>
         </div>
         <div className="clear"></div>

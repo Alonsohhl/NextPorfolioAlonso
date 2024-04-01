@@ -1,4 +1,6 @@
-import postImg from "@/assets/images/home/home-page.png";
+// import postImg from "@/assets/images/home/home-page.png";
+import React from "react"
+import Model3d from "./3DPCModel"
 
 export default function HomeSection() {
   return (
@@ -12,7 +14,8 @@ export default function HomeSection() {
                 <br />
                 Developer
               </h2>
-              <img src={postImg.src} alt="" className="animate-float"/>
+              {/* <img src={postImg.src} alt="" className="animate-float"/> */}
+              <Model3d />
               <ul className="entry-info">
                 <li className="author-nickname-holder">
                   <div className="entry-info-text">Location</div>
