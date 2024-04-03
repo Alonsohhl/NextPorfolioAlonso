@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react"
 import { Canvas, useFrame, useLoader, useThree } from '@react-three/fiber';
 import { useRef } from 'react';
-import { Mesh } from 'three';
+import { Group, Mesh } from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { log } from "console";
 
@@ -26,7 +26,7 @@ export const ModelViewer: React.FC<{ mousePosition: MousePosition}> = ( {mousePo
 export const EthereumModel: React.FC<{mousePosition: MousePosition}> = ( {mousePosition}  ) => {
   const Keyboard = useLoader(GLTFLoader, 'homepage/KeyboardMod.glb');
   const Monitor = useLoader(GLTFLoader, 'homepage/Monitor.glb');
-  const groupRef = useRef<Mesh>(null);
+  const groupRef = useRef<Group>(null);
 
   useFrame((state ) => {
     if (groupRef.current && mousePosition) {
@@ -54,6 +54,7 @@ export const EthereumModel: React.FC<{mousePosition: MousePosition}> = ( {mouseP
       <pointLight position={[-10, -10, -10]} color="#f80288" intensity={5000} />
       <pointLight position={[10, 10, 10]} color="#ca81fd" intensity={2500} />
 
+      {/* eslint-disable-next-line */}
       <group ref={groupRef}>
         <primitive object={Monitor.scene} position={[0, 0, 0]} /> {/* Adjust 2 to the appropriate height */}
         <primitive object={Keyboard.scene} position={[0, -1.5, -1]} />
