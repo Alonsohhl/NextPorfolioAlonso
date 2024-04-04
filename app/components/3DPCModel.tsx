@@ -30,8 +30,7 @@ export const EthereumModel: React.FC<{mousePosition: MousePosition}> = ( {mouseP
 
   useFrame((state ) => {
     if (groupRef.current && mousePosition) {
-
-      const x = (mousePosition.x / state.size.width) * 2 - 1;
+      const x = (mousePosition.x / state.size.width) * 2 - 3;
       const y = -(mousePosition.y / state.size.height) * 2 + 1;
 
       const rotationY = Math.atan2(x, 1); // Assuming the mouse is always "in front" of the model on the Z-axis
@@ -41,13 +40,6 @@ export const EthereumModel: React.FC<{mousePosition: MousePosition}> = ( {mouseP
       groupRef.current.rotation.x = rotationX / 3;
     }
   });
-
-
-  // useFrame((_state, delta) => {
-  //     if (modelRef.current) {
-  //         modelRef.current.rotation.y += delta / 2;
-  //     }
-  // });
 
   return (
     <>
