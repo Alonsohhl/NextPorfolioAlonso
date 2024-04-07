@@ -30,9 +30,9 @@ function SinglePortfolio(props: any) {
           <h1 className="entry-title page-title center-text">
             {post.data.role}
           </h1>
-          <div className="my-2 mx-auto md:float-left md:mr-4">
-            <Info dateFrom={post.data.dateFrom} dateTo={post.data.dateTo} companyName={post.data.companyName} role={post.data.role} />
-          </div>
+          {/* <div className="my-2 mx-auto md:float-left md:mr-4"> */}
+          {/*   <Info dateFrom={post.data.dateFrom} dateTo={post.data.dateTo} companyName={post.data.companyName} role={post.data.role} /> */}
+          {/* </div> */}
           <div className="medium-text">
             <Markdown className="markdown text-white pl-5 block">{post.content}</Markdown>
           </div>

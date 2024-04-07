@@ -1,7 +1,9 @@
 import "reactjs-popup/dist/index.css";
 import HomeSection from "./components/homeSection";
-import About from "./components/aboutme";
-import AboutIntro from "./components/aboutmeIntro";
+import Summary from "./components/Summary";
+import WorkExperience from "./components/WorkExperience";
+
+
 import HomeWrapper from "@/components/Home";
 import dynamic from "next/dynamic";
 import { Portfolio } from "./components/portfolio";
@@ -30,10 +32,10 @@ function Home() {
               {/* <WavyBackground className="w-full mx-auto h-full pb-40 absolute -z-20"></WavyBackground> */}
               <HomeSection />
               <section className="panel ">
-                <AboutIntro />
+                <Summary />
               </section>
               <section className="panel ">
-                <About />
+                <WorkExperience />
               </section>
             </div>
           </div>

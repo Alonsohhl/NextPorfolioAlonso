@@ -10,7 +10,7 @@ const Single = () => {
       <div className="single-content-wrapper center-relative top-0 lg:top-70 max-w-4xl">
         <div className="entry-content">
           <p>
-            I'm a FullStack Developer with over 7 years of experience, adept in streamlining web application functionality and enhancing user interface design across diverse platforms. I Demonstrate proficiency in database design, and cloud infrastructure, coupled with a robust skill set in NextJS, Vue, React, and Git, ensuring high performance and scalability of web solutions. Committed to leveraging analytical skills to solve complex problems, improve system reliability, and contribute to team success through effective collaboration and innovative approaches.
+            FullStack Developer with a 7+ year track record of leveraging cloud infrastructure (AWS) and modern JavaScript/Typescript frameworks. I Demonstrate proficiency in relational and non-relational databases, and cloud infrastructure, coupled with a robust skill set in React, NextJS, and Git and test-driven development, ensuring high performance and scalability of web solutions. Committed to continuous learning and innovation, aiming to lead projects that anticipate and set future trends in web development.
           </p>
         </div>
         <div className="clear"></div>
