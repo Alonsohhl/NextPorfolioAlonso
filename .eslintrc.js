@@ -4,8 +4,8 @@ module.exports = {
         "es2021": true
     },
     "extends": [
-        "extends": "next",
-        "extends":"next/core-web-vitals"
+        "next",
+        "next/core-web-vitals"
     ],
     "overrides": [
         {
@@ -29,4 +29,4 @@ module.exports = {
     ],
     "rules": {
     }
-}
+};

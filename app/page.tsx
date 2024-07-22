@@ -15,35 +15,38 @@ const ContactMe = dynamic(() => import("./components/homeContactMe"), {
   ssr: false,
 });
 
+
+
+
 function Home() {
 
 
 
   return (
     <>
-      <WavyBackground
-        className={cn(`w-full mx-auto h-full absolute -z-20 `)}
-      ></WavyBackground>
-      <HomeWrapper>
-        <main className="page-background" id="page-background">
-          <HomeStars />
-          <div id="content" className="site-content">
-            <div className="horizontal-container">
-              {/* <WavyBackground className="w-full mx-auto h-full pb-40 absolute -z-20"></WavyBackground> */}
-              <HomeSection />
-              <section className="panel ">
-                <Summary />
-              </section>
-              <section className="panel ">
-                <WorkExperience />
-              </section>
+        <WavyBackground
+          className={cn(`w-full mx-auto h-full absolute -z-20 `)}
+        ></WavyBackground>
+        <HomeWrapper>
+          <main className="page-background" id="page-background">
+            <HomeStars />
+            <div id="content" className="site-content">
+              <div className="horizontal-container">
+                {/* <WavyBackground className="w-full mx-auto h-full pb-40 absolute -z-20"></WavyBackground> */}
+                <HomeSection />
+                <section className="panel ">
+                  <Summary />
+                </section>
+                <section className="panel ">
+                  <WorkExperience />
+                </section>
+              </div>
             </div>
-          </div>
-        </main>
-        <Portfolio />
-        <ContactMe />
-        {/* Popups */}
-      </HomeWrapper>
+          </main>
+          <Portfolio />
+          <ContactMe />
+          {/* Popups */}
+        </HomeWrapper>
     </>
   );
 }

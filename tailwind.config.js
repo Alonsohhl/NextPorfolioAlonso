@@ -25,6 +25,7 @@ module.exports = {
       colors: {
         'custom-purple': '#9354ed', // replace with your exact color code
         'custom-pink': '#f80288', // replace with your exact color code
+        'al-purple-dark': '#0f0f27'
       },
       borderRadius: {
         'extra-large': '2rem', // or whatever value gives you the desired effect

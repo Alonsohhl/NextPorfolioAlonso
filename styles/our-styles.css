@@ -378,11 +378,11 @@
     display: grid;
     grid-template-columns: repeat(2,minmax(0,1fr));
     padding-bottom: .25rem;
-    padding-top: .25rem
+    padding-top: .25rem;
+    align-items: start;
 }
 
 .chat-image {
-    align-self: flex-end;
     grid-row: span 2/span 2
 }
 
@@ -404,6 +404,14 @@
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content
+}
+
+.chat.chat-start #message{
+    border-top-left-radius: 0;
+}
+
+.chat.chat-end #message{
+    border-top-right-radius: 0;
 }
 
 .chat-bubble:before {

@@ -166,26 +166,25 @@ const ChatBot = () => {
 
 
       <div className={
-        cn('z-30 m-2 p-2 fixed max-w-[300px] max-h-[600px] overflow-y-scroll bottom-2 right-0 bg-black border-solid border-2 border-white rounded-md scrollbar scrollbar-thumb-gray-900 scrollbar-track-gray-100',
+        cn('bg-gradient-to-b from-al-purple-dark to-gray-950 shadow-xl border-none z-30 m-2 p-2 fixed max-w-[300px] max-h-[600px]  bottom-2 right-0 bg-blue-100 rounded-3xl scrollbar scrollbar-thumb-gray-900 scrollbar-track-gray-100',
           { 'hidden': !visible }
-
         )} >
-        <a className='z-90 rounded-full absolute bg-white px-3 py-1 text-black font-bold text-lg right-0 top-0 hover:bg-gray-800 hover:text-white' onClick={switchVisible}>
+        <a className=' translate-x-[0.5px] -translate-y-[0.5px] top-0 right-0 z-90 rounded-tr-3xl absolute px-3 py-1 text-black font-bold text-lg hover:bg-gray-800 hover:text-white' onClick={switchVisible}>
           x
         </a>
 
 
 
-        <div className="mockup-window border bg-base-300 w-full h-full flex flex-col">
+        <div className="mockup-window border bg-base-300 w-full h-full flex flex-col pt-5">
           <div className='p-5 pb-8 flex-grow overflow-auto'>
             {messages.length && messages.map((msg, i) => (
-              <div className={`chat ${msg.role === 'assistant' ? 'chat-start' : 'chat-end'}`} key={'chatKey' + i}>
+              <div className={`chat ${msg.role === 'assistant' ? 'chat-start' : 'chat-end'} `} key={'chatKey' + i}>
                 <div className="chat-image avatar">
                   <div className="w-10 rounded-full">
                     <img src={msg.role === 'assistant' ? '/alonso-gpt.jpeg' : '/recruiter.jpeg'} alt={`${msg.role} avatar`} />
                   </div>
                 </div>
-                <div className={cn(`${msg.role === 'assistant' ? 'bg-blue-950' : 'bg-gray-800'}
+                <div id="message" className={cn(`${msg.role === 'assistant' ? 'bg-blue-950' : 'bg-gray-800'}
                 border-solid rounded-md p-2 text-sm w-full break-words`)}>
                   {i != messages.length - 1 && msg.content}
                   {i == messages.length - 1 && <TextGenerateEffect words={msg.content} className='text-white text-sm' />}
@@ -198,7 +197,7 @@ const ChatBot = () => {
           <form className="form-control m-5 items-center" onSubmit={handleSubmit} id='Alonso-Chatbot-Form'>
 
             {messages.length && messages.length < 2 &&
-              <div className='my-2 p-2 text-sm bg-yellow-200 rounded-lg text-black '>
+              <div className='my-2 p-2 text-sm bg-yellow-100 rounded-lg text-black focus:bg-blue-700'>
                 <p className='text-sm m-0'>Feel free to ask questions such as &quot;Who are you&quot; and &quot;What is your skill set?&quot; This chatbot was created purely for entertainment by Alonso.</p>
               </div>
             }
@@ -207,11 +206,11 @@ const ChatBot = () => {
               {isTyping && <small className='absolute -top-12 left-0.5 animate-pulse'>Alonso Bot is Typing...</small>}
 
               <input type="text" placeholder="Ask Me Anything"
-                className="input input-bordered flex-grow text-black px-1 rounded" required
+                className="input input-bordered flex-grow text-black px-1 rounded bg-gray-200" required
                 onChange={handleMessageChange} disabled={loading} value={message}
               />
-              <button className="bg-blue-950 p-3 ml-1 rounded" type="submit">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="currentColor" viewBox="0 0 16 16">
+              <button className="bg-blue-950 p-2 ml-1 rounded" type="submit">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="currentColor" viewBox="0 0 16 16">
                   <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z" />
                 </svg>
               </button>

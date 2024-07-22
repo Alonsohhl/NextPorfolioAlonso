@@ -18,8 +18,9 @@ import "@/styles/our-styles.css";
 // Types
 import type { Metadata } from "next";
 import { GoogleTagManager } from '@next/third-parties/google'
+import { ReactQueryClientProvider } from '@/components/ReactQueryClientProvider'
 
-import ChatBot from "@/components/ChatBot"
+import ChatBot from "@/components/ui/Chatbot/ChatBot"
 // --------------
 
 // Metadata of the website (used to inprove SEO of the website)
@@ -41,16 +42,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="page-background">
-        <div className="site-wrapper">
-          <Header />
-          {children}
-          <ChatBot />
-          {/* <Footer /> */}
-        </div>
-      </body>
-      <GoogleTagManager gtmId="GTM-T2BR53XQ" />
-    </html>
+    <ReactQueryClientProvider>
+      <html lang="en">
+        <body className="page-background">
+          <div className="site-wrapper">
+            <Header />
+            {children}
+            <ChatBot />
+            {/* <Footer /> */}
+          </div>
+        </body>
+        <GoogleTagManager gtmId="GTM-T2BR53XQ" />
+      </html>
+    </ReactQueryClientProvider>
   );
 }
