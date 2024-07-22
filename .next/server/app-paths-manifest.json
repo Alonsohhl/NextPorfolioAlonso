@@ -1,6 +1,5 @@
 {
+  "/not-found": "app/not-found.js",
   "/page": "app/page.js",
-  "/icon.png/route": "app/icon.png/route.js",
-  "/api/chatbot/route": "app/api/chatbot/route.js",
-  "/api/chatbot/[threadId]/message/route": "app/api/chatbot/[threadId]/message/route.js"
+  "/api/chatbot/route": "app/api/chatbot/route.js"
 }
