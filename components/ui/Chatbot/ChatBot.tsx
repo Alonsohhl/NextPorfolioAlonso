@@ -13,6 +13,7 @@ import useChatMessages from './hooks/messages'
 const ChatBot = React.memo(() => {
 
   const [loading, setLoading] = useState(false);
+  const [isTyping, setIsTyping] = useState<boolean>(false);
   const [message, setMessage] = useState<string>("");
   const { submitMessage, messages } = useChatMessages()
 
@@ -20,13 +21,12 @@ const ChatBot = React.memo(() => {
 
 
   const [visible, setVisible] = useState(true);
-  const [isTyping, setIsTyping] = useState<boolean>(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     setLoading(true)
     setIsTyping(true)
     e.preventDefault();
-    submitMessage(message)
+    await submitMessage(message)
     setMessage("")
     setLoading(false)
     setIsTyping(false)
@@ -38,8 +38,6 @@ const ChatBot = React.memo(() => {
 
 
   useEffect(()=>{
-    console.log("Messages")
-    console.log(messages)
   }, [messages])
 
 
@@ -79,9 +77,9 @@ const ChatBot = React.memo(() => {
                     </div>
                   </div>
                   <div id="message" className={cn(`${msg.role === 'assistant' ? 'bg-blue-950' : 'bg-gray-800'}
-                border-solid rounded-md p-2 text-sm whitespace-normal break-words`)}>
+                border-solid rounded-md p-2 text-sm break-words`)}>
                     {i != messages.length - 1 && msg.content}
-                    {i == messages.length - 1 && <TextGenerateEffect words={msg.content} className='text-white text-sm' />}
+                    {i == messages.length - 1 && <TextGenerateEffect words={msg.content} className='text-white text-sm break-words' />}
                   </div>
 
                 </div>
@@ -90,7 +88,7 @@ const ChatBot = React.memo(() => {
 
             <form className="form-control items-center" onSubmit={handleSubmit} id='Alonso-Chatbot-Form'>
 
-              {messages && messages.length < 2 &&
+              {!isTyping && messages && messages.length < 2 &&
                 <div className='my-2 text-sm bg-yellow-100 rounded-lg text-black focus:bg-blue-700'>
                   <p className='text-sm p-2 m-0'>Feel free to ask questions such as &quot;Who are you&quot; and &quot;What is your skill set?&quot; This chatbot was created purely for entertainment by me.</p>
                 </div>
@@ -100,7 +98,7 @@ const ChatBot = React.memo(() => {
                 {isTyping && <small className='absolute -top-12 left-0.5 animate-pulse'>Alonso Bot is Typing...</small>}
 
                 <input type="text" placeholder=" Ask Me Anything"
-                  className="input input-bordered flex-grow text-black rounded bg-gray-200 w-1/4" required
+                  className="input input-bordered flex-grow text-black rounded bg-gray-200 w-1/4 px-2" required
                   onChange={handleMessageChange} disabled={loading} value={message}
                   // onChange={handleMessageChange} value={message}
                    // disabled={false} value={message}

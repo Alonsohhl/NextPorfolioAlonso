@@ -4,9 +4,10 @@ import { NextRequest } from "next/server";
 import { NextResponse } from 'next/server';
 import submitMessage from "./utils/submitMessage";
 import * as Yup from 'yup';
+import { ApiResponse } from "./utils";
 
 const AI_API_KEY = process.env.OPENAI_API_KEY
-const ASSISTANT_ID = process.env.ASSISTANT_ID
+const ASSISTANT_ID = process.env.OPENAI_ASSISTANT_ID
 
 const headers = {
   'Authorization': `Bearer ${AI_API_KEY}`,
@@ -48,10 +49,12 @@ function delay(ms :number) {
 async function runThread(threadId: string) {
   const url = `https://api.openai.com/v1/threads/${threadId}/runs`
   const body = {
-    "assistant_id": ASSISTANT_ID
+    "assistant_id": process.env.OPENAI_ASSISTANT_ID
   }
-    const response = await fetch(url, { method: 'POST', headers, body: JSON.stringify(body) })
-    if (!response.ok) throw new Error(`Error Running Thread`)
+
+
+    const response: ApiResponse= await fetch(url, { method: 'POST', headers, body: JSON.stringify(body) })
+    if (!response.ok || response.success == false) throw new Error(`Error Running Thread`)
 
     return Response.json({ success: true , response})
 
@@ -67,16 +70,12 @@ async function getMessages(threadId: string): Promise<ResponseMessages> {
 
 
     const data = (await res.json()).data
-    console.log('data')
-    console.log(data)
 
     const messages: Message[] =  await data.reverse().map((content: any) => {
       return { role: content.role, content: content.content[0].text.value }
 
 
     })
-    console.log('messages')
-    console.log(messages)
     return { success: true, messages }
 
 }

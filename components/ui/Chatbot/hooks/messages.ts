@@ -4,7 +4,6 @@ import { useState, useCallback, useEffect } from 'react'
 import { Message, ReqMessage, ResponseMessages } from '@/app/_shared/types';
 
 export async function fetchChatData() {
-  console.log("Fetching Data")
   const URL = `${process.env.NEXT_PUBLIC_API_URL}/chatbot`
   const response = await fetch(URL, { method: 'GET' });
   if (!response.ok) {
@@ -22,8 +21,6 @@ export async function fetchMessages(threadId: string, msgText: string): Promise<
       content: msgText
     }
   }
-  console.log('message before fetch');
-  console.log(reqMsg);
 
   const response = await fetch(URL, { method: 'POST', body: JSON.stringify(reqMsg) });
   if (!response.ok) {
@@ -57,8 +54,6 @@ const useChatLoader = () => {
 
   useEffect(() => {
     if (threadId !== null) {
-      console.log("threadId")
-      console.log(threadId)
     }
   }, [threadId]);
   return { submitMessage, messages }
