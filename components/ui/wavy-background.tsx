@@ -47,18 +47,23 @@ export const WavyBackground = ({
   };
 
   const init = () => {
-    canvas = canvasRef.current;
-    ctx = canvas.getContext("2d");
-    w = ctx.canvas.width = window.innerWidth;
-    h = ctx.canvas.height = window.innerHeight;
-    ctx.filter = `blur(${blur}px)`;
-    nt = 0;
-    window.onresize = function () {
+    if (canvasRef.current) {
+      canvas = canvasRef.current;
+      ctx = canvas.getContext("2d");
       w = ctx.canvas.width = window.innerWidth;
       h = ctx.canvas.height = window.innerHeight;
       ctx.filter = `blur(${blur}px)`;
-    };
-    render();
+      nt = 0;
+      window.onresize = function () {
+        console.log('rezizeee')
+        w = ctx.canvas.width = window.innerWidth;
+        h = ctx.canvas.height = window.innerHeight;
+        console.log('width')
+        console.log(w)
+        ctx.filter = `blur(${blur}px)`;
+      };
+      render();
+    }else{console.error('canvas reference is not set')}
   };
 
   const waveColors = colors ?? [
@@ -68,6 +73,18 @@ export const WavyBackground = ({
     "#e879f9",
     "#3b42f2",
   ];
+
+    const updateCanvasSize = () => {
+    if (canvasRef.current) {
+      canvas = canvasRef.current;
+      ctx = canvas.getContext("2d");
+      w = ctx.canvas.width = window.innerWidth;
+      h = ctx.canvas.height = window.innerHeight;
+      ctx.filter = `blur(${blur}px)`;
+    }
+  };
+
+
   const drawWave = (n: number) => {
     nt += getSpeed();
     for (i = 0; i < n; i++) {
@@ -94,7 +111,9 @@ export const WavyBackground = ({
 
   useEffect(() => {
     init();
+    window.addEventListener("resize", updateCanvasSize);
     return () => {
+      window.addEventListener("resize", updateCanvasSize);
       cancelAnimationFrame(animationId);
     };
   }, []);

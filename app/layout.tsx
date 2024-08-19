@@ -45,7 +45,7 @@ export default function RootLayout({
     <ReactQueryClientProvider>
       <html lang="en">
         <body className="page-background">
-          <div className="site-wrapper">
+          <div className="site-wrapper relative">
             <Header />
             {children}
             <ChatBot />

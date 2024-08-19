@@ -25,7 +25,8 @@ function Home() {
   return (
     <>
         <WavyBackground
-          className={cn(`w-full mx-auto h-full absolute -z-20 `)}
+          // className={cn(`w-full mx-auto h-full absolute -z-20 `)}
+          className={`w-full mx-auto h-full absolute -z-20 `}
         ></WavyBackground>
         <HomeWrapper>
           <main className="page-background" id="page-background">
