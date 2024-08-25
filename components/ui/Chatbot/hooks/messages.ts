@@ -4,7 +4,7 @@ import { useState, useCallback, useEffect } from 'react'
 import { Message, ReqMessage, ResponseMessages } from '@/app/_shared/types';
 
 export async function fetchChatData() {
-  const URL = `${process.env.SITE_URL}/api/chatbot`
+  const URL = `${process.env.NEXT_PUBLIC_SITE_URL}/api/chatbot`
   const response = await fetch(URL, { method: 'GET' });
   if (!response.ok) {
     throw new Error('Network response was not ok');
@@ -14,7 +14,7 @@ export async function fetchChatData() {
 }
 
 export async function fetchMessages(threadId: string, msgText: string): Promise<ResponseMessages> {
-  const URL = `${process.env.SITE_URL}/api/chatbot/${threadId}/message`
+  const URL = `${process.env.NEXT_PUBLIC_SITE_URL}/api/chatbot/${threadId}/message`
   const reqMsg: ReqMessage = {
     message: {
       role: 'user',
